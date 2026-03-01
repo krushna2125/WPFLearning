@@ -1,0 +1,36 @@
+﻿<Window x:Class="LabelControl.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LabelControl"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="300" Width="300">
+    <StackPanel Margin="25">
+        <Label Content="_Name"
+               Target="{Binding ElementName=txtName}"/>
+        <TextBox x:Name="txtName"/>
+        <Label Content="_Mail"
+               Target="{Binding ElementName=txtMail}"/>
+        <TextBox x:Name="txtMail"/>
+        <Label Target="{Binding ElementName=txtAddress}">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="RadioButton.png"
+                       Height="20"
+                       Width="20"/>
+                <AccessText Text="_Address"/>
+            </StackPanel>
+        </Label>
+        <TextBox x:Name="txtAddress"/>
+        <Label Target="{Binding ElementName=txtCountry}">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="RadioButton.png"
+                       Height="20"
+                       Width="20"/>
+                <AccessText Text="_Country"/>
+            </StackPanel>
+        </Label>
+        <TextBox x:Name="txtCountry"/>
+
+    </StackPanel>
+</Window>
