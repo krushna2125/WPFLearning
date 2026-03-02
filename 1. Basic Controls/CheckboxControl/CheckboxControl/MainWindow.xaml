@@ -1,0 +1,78 @@
+﻿<Window x:Class="CheckboxControl.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CheckboxControl"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="250">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <StackPanel Margin="10"
+                    Grid.Row="0">
+            <Label FontWeight="Bold">Application Options</Label>
+            <CheckBox>Enable Feature ABC</CheckBox>
+            <CheckBox>Enable Feature XYZ</CheckBox>
+            <CheckBox IsChecked="True">Enable Feature WWW</CheckBox>
+        </StackPanel>
+        <StackPanel Margin="10"
+                    Grid.Row="1">
+            <Label FontWeight="Bold">
+                Application Options
+            </Label>
+            <CheckBox>
+                <TextBlock>
+                    Enable Feature <Run Foreground="Green" FontWeight="Bold">XYZ</Run>
+                </TextBlock>
+            </CheckBox>
+            <CheckBox IsChecked="True">
+                <WrapPanel>
+                    <TextBlock>
+                        Enable Feature <Run FontWeight="Bold">XYZ</Run>
+                    </TextBlock>
+                    <Image Source="Question.png" Width="16" Height="16"/>
+                </WrapPanel>
+            </CheckBox>
+            <CheckBox>
+                <TextBlock>
+                    Enable Feature <Run Foreground="Blue" TextDecorations="Underline" FontWeight="Bold">WWW</Run>
+                </TextBlock>
+            </CheckBox>
+        </StackPanel>
+        <StackPanel Margin="10"
+                    Grid.Row="2">
+            <Label FontWeight="Bold">
+                Application Options
+            </Label>
+            <StackPanel Margin="10,5">
+                <CheckBox IsThreeState="True"
+                          Name="CbAllFeatures"
+                          Checked="AllFeaturesOn_Checked"
+                          Unchecked="AllFeaturesOn_Checked">
+                    Enable All
+                </CheckBox>
+            </StackPanel>
+            <StackPanel Margin="20,5">
+                <CheckBox Name="cbFeatureABC"
+                          Checked="CbFeatureOn_Checked"
+                          Unchecked="CbFeatureOn_Checked">
+                    Enable Feature ABC
+                </CheckBox>
+                <CheckBox Name="cbFeatureXYZ"
+                          Checked="CbFeatureOn_Checked"
+                          Unchecked="CbFeatureOn_Checked">
+                    Enable Feature XYZ
+                </CheckBox>
+                <CheckBox Name="cbFeatureWWW"
+                          Checked="CbFeatureOn_Checked"
+                          Unchecked="CbFeatureOn_Checked">
+                    Enable Feature WWW
+                </CheckBox>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>
